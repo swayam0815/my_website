@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    
+<h1>Rock, Paper Scissors</h1>
+<h2>By: Swayam</h2>
+
+<p>This is a work in progress. It was created <br>
+   only two days ago! For now the game only works on <Br>
+  computers only, so if you're on mobile, sorry! 
+  To play the game first 
+  <br> press ctrl + shift + J, <br> 
+   that opens up the CONSOLE. <br> The game is played in the console, now thats it opened, you're all set to. <br>
+  USe the buttons below to choose what you want to use, rock,paper or scissors. 
+  <br>In the console you will find out if you won or not.
+<br> GOOD LUCK!  </p>
+<script>
+
+const getUserChoice = userInput => {
+  
+  userInput = userInput.toLowerCase();
+
+if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
+  return userInput;
+} else {
+console.log('Error!');
+ }
+}
+
+const getComputerChoice = () => {
+const randomNumber = Math.floor(Math.random() * 3);
+if (randomNumber=== 0) {
+  return 'rock'
+}
+if (randomNumber=== 1) {
+  return 'paper'
+}
+if (randomNumber=== 2) {
+  return 'scissors'
+}};
+
+
+const determineWinner = (userChoice, computerChoice) => {
+if (userChoice === computerChoice) {
+  return 'The game is a tie!';
+}
+
+
+if (userChoice === 'rock') {
+  if (computerChoice === 'paper') {
+    return 'You suck, the computer won!';
+  } else {
+    return 'You dont suck, you won!';
+  }
+}
+
+if (userChoice === 'paper') {
+  if (computerChoice === 'scissors') {
+    return 'You suck, the computer won!!';
+  } else {
+    return 'You dont suck, you won!';
+  }
+}
+
+if (userChoice === 'scissors') {
+  if (computerChoice === 'rock') {
+    return 'You suck, the computer won!';
+  } else {
+    return 'You dont suck, you won!';
+  }
+}
+};
+
+const playGameRock = () => {
+   const userChoice = getUserChoice('rock');
+   const computerChoice = getComputerChoice();
+   console.log('You used ' + userChoice);
+   console.log('The computer used ' + computerChoice);
+   console.log(determineWinner(userChoice, computerChoice));
+};
+
+
+const playGamePaper = () => {
+   const userChoice = getUserChoice('paper');
+   const computerChoice = getComputerChoice();
+   console.log('You used ' + userChoice);
+   console.log('The computer used ' + computerChoice);
+   console.log(determineWinner(userChoice, computerChoice));
+};
+
+const playGameScissors = () => {
+   const userChoice = getUserChoice('scissors');
+   const computerChoice = getComputerChoice();
+   console.log('You used ' + userChoice);
+   console.log('The computer used ' + computerChoice);
+   console.log(determineWinner(userChoice, computerChoice));
+};
+
+
+
+</script>
+
+<button onclick="playGameRock()">Rock</button>
+<button onclick="playGamePaper()">Paper</button>
+<button onclick="playGameScissors()">Scissors</button>
+
+<button onclick="console.clear()">Clear</button>
+
+ 
+</body>
+
+</html>
+
+
+
+
